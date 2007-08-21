@@ -1,5 +1,8 @@
 Revision history for Crypt-AllOrNothing-Util
 
+0.08	8/20/07 20:52
+		Fix formatting in POD and change one last mention to Crypt::AON::Util
+
 0.07	8/20/07 19:19
 		Change namespace to Crypt::AllOrNothing::Util
 

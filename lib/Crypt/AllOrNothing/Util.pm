@@ -13,11 +13,11 @@ Crypt::AllOrNothing::Util - Util functions for Crypt::AllOrNothing
 
 =head1 VERSION
 
-Version 0.07
+Version 0.08
 
 =cut
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 =head1 SYNOPSIS
 
@@ -31,11 +31,11 @@ our $VERSION = '0.07';
 
 =head1 EXPORT
 
-	newKey
-	breakString
-	addLength_andPad
-	remLength_andPad
-	largeNumToChar
+  newKey
+  breakString
+  addLength_andPad
+  remLength_andPad
+  largeNumToChar
 
 =cut
 
@@ -218,8 +218,8 @@ your bug as I make changes.
 
 You can find documentation for this module with the perldoc command.
 
-    perldoc Crypt::AllOrNothing::Util
-	perldoc Crypt::AllOrNothing
+  perldoc Crypt::AllOrNothing::Util
+  perldoc Crypt::AllOrNothing
 
 You can also look for information at:
 
@@ -256,4 +256,4 @@ under the same terms as Perl itself.
 
 =cut
 
-1; # End of Crypt::AON::Util
+1; # End of Crypt::AllOrNothing::Util
