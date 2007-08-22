@@ -17,13 +17,13 @@ BEGIN {
 # Insert your test code below, the Test::More module is use()ed here so read
 # its man page ( perldoc Test::More ) for help writing this test script.
 
-is(length newKey(), 16, "Length of new key, no arguments");
-is(length newKey(size=>256, 'return'=>'ascii'), 32, "Length of new key-32 bytes-ascii");
-is(length newKey(size=>512, 'return'=>'ascii'), 64, "Length of new key-64 bytes-ascii");
-is(length newKey(size=>256, 'return'=>'hex'), 64, "Length of new key-32 bytes-hex");
-is(length newKey(size=>512, 'return'=>'hex'), 128, "Length of new key-64 bytes-hex");
-is(length newKey(size=>512, 'return'=>'wrong'), 64, "Length of new key-64 bytes-incorrect return type, should give error and go ascii");
-is(length newKey(size=>128, 'return'=>'base64'), 24, "Length of new key-16 bytes- encoded as base64 length 24");
+is(length randomValue(), 16, "Length of new key, no arguments");
+is(length randomValue(size=>256, 'return'=>'ascii'), 32, "Length of new key-32 bytes-ascii");
+is(length randomValue(size=>512, 'return'=>'ascii'), 64, "Length of new key-64 bytes-ascii");
+is(length randomValue(size=>256, 'return'=>'hex'), 64, "Length of new key-32 bytes-hex");
+is(length randomValue(size=>512, 'return'=>'hex'), 128, "Length of new key-64 bytes-hex");
+is(length randomValue(size=>512, 'return'=>'wrong'), 64, "Length of new key-64 bytes-incorrect return type, should give error and go ascii");
+is(length randomValue(size=>128, 'return'=>'base64'), 24, "Length of new key-16 bytes- encoded as base64 length 24");
 my @foo = breakString(string=>"abcdefghijklmnopqrstuvwxyz", size=>7);
 is_deeply( \@foo, ["abcdefg","hijklmn","opqrstu","vwxyz"], "breaks alphabet correctly");
 

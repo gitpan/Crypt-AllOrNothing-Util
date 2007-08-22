@@ -13,17 +13,17 @@ Crypt::AllOrNothing::Util - Util functions for Crypt::AllOrNothing
 
 =head1 VERSION
 
-Version 0.08
+Version 0.09
 
 =cut
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 =head1 SYNOPSIS
 
   use Crypt::AoN::Util qw/:all/;
 
-  $key = newKey(size=>128, return=>'ascii');
+  $randomValue = randomValue(size=>128, return=>'ascii');
   @brokenString = breakString(string=>$string, size=>$size);
   addLength_andPad(array=>\@array, size=>$packetSize);
   remLength_andPad(array=>\@array);
@@ -31,7 +31,7 @@ our $VERSION = '0.08';
 
 =head1 EXPORT
 
-  newKey
+  randomValue
   breakString
   addLength_andPad
   remLength_andPad
@@ -41,7 +41,7 @@ our $VERSION = '0.08';
 
 our @ISA = qw(Exporter);
 our %EXPORT_TAGS = ( 'all' => [ qw(
-	newKey
+	randomValue
 	breakString
 	addLength_andPad
 	remLength_andPad
@@ -143,14 +143,14 @@ sub breakString {
 	return @brokenString;
 }
 
-=head2 $key = newKey(size=>$size,return=>$type)
+=head2 $randomValue = randomValue(size=>$size,return=>$type)
 
-  'size' is the number of bits to be in the created key.  it can be any value greater than 0, 128 is the default if nothing is passed
+  'size' is the number of bits to be in the created randomValue.  it can be any value greater than 0, 128 is the default if nothing is passed
   'return' can currently be 'ascii', 'hex', 'base64', or 'int'.  If ascii, the size of the returned value will be exactly that passed, if hex, it will be twice that passed, if base64, 4/3 that passed, if int, the bitsize will be that passed, or possibly a few bits smaller.
 
 =cut
 
-sub newKey {
+sub randomValue {
 	my %params = @_;
 	#Defaults bits to 128 and return to ASCII
 	if (defined $params{size} && $params{size} < 0) { 
